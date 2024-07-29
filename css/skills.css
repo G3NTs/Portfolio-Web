@@ -546,8 +546,8 @@
 .mask6 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/audacity.svg);
-  mask-image: url(/assets/audacity.svg);
+  -webkit-mask-image: url(assets/audacity.svg);
+  mask-image: url(assets/audacity.svg);
   -webkit-mask-size: 180%;
           mask-size: 180%;
   -webkit-mask-repeat: no-repeat;
