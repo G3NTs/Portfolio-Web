@@ -546,8 +546,8 @@
 .mask6 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/audacity.svg);
-  mask-image: url(/assets/audacity.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/audacity.svg);
+  mask-image: url(/Portfolio-Web/assets/audacity.svg);
   -webkit-mask-size: 180%;
           mask-size: 180%;
   -webkit-mask-repeat: no-repeat;
@@ -561,8 +561,8 @@
 .mask7 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/animate.svg);
-  mask-image: url(/assets/animate.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/animate.svg);
+  mask-image: url(/Portfolio-Web/assets/animate.svg);
   -webkit-mask-size: 125%;
           mask-size: 125%;
   -webkit-mask-repeat: no-repeat;
@@ -575,8 +575,8 @@
 .mask8 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/reaper.svg);
-  mask-image: url(/assets/reaper.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/reaper.svg);
+  mask-image: url(/Portfolio-Web/assets/reaper.svg);
   -webkit-mask-size: 120%;
           mask-size: 120%;
   -webkit-mask-repeat: no-repeat;
