@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="icon" href="/assets/WDD22.svg" type="image/svg+xml">
+    <title>MineSweeper Dev Blog</title>
+    <script src="https://kit.fontawesome.com/00c01f606b.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/projectpage.css"> <!-- Link to your CSS file if you have one -->
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <h4>Minesweeper Dev Blog</h4>
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>CommandPrompt MineSweeper #01 Final Version</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-27</div>
+            <div class="textblock">Hello,<br>A while ago now, I Created a Minesweeper game in the Windows command prompt using C++. This blog will take you through the journey of how I achieved this feat, leveraging the Windows.h package and a graphical engine by javidx9, also known as OneLoneCoder.</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Setting Up the Graphical Interface</h5>
+                To transform the command prompt into a viable screen for a game, I implemented a low-level graphical interface using ASCII characters. This was accomplished through the Windows.h package and the graphical engine developed by javidx9, OneLoneCoder. This setup allowed the game to render images using ASCII characters, providing a retro yet functional display.
+                <br><br>
+                <a href="https://github.com/OneLoneCoder/Javidx9/tree/master/ConsoleGameEngine">https://github.com/OneLoneCoder/Javidx9/tree/master/ConsoleGameEngine</a>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Displaying Characters on the Screen</h5>
+                Instead of using traditional pixels, the game displays regular ASCII characters. This involved creating two screen buffers: one buffer to store the index of each character and another to store the actual character (wchar_t) that would be displayed. The first buffer selects a character from a long string, which is then stored in the second buffer for display. This method effectively simulates pixel data with ASCII characters, creating the game's visual elements.
+                <pre>
+                    <code class="cpp">
+// two buffer arrays, pField & screen. pField stores pointers. 
+// screen stores the ASCII characters displayed on screen
+
+pField.resize(nScreenWidth * nScreenHeight, 0);
+screen = new wchar_t[nScreenWidth * nScreenHeight];
+for (int i = 0; i < nScreenWidth * nScreenHeight; i++)
+{
+    screen[i] = L' ';
+}
+                    </code>
+                </pre>
+                
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Initializing the Game Grid</h5>
+                With the display mechanism in place, the next step was to represent the game grid. Players can customize the difficulty by inputting the width and height of the Minesweeper grid and the number of bombs. This input is handled through standard input (std::cin), allowing for a dynamic and customizable game setup. The grid is then initialized based on these player settings.
+                <div class="imagecontainer zoom2">
+                    <img class="imageblock zoom" src="/assets/inputminesweeper.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Generating the Minesweeper Grid</h5>
+                The grid generation involves placing bombs randomly across the grid's x and y coordinates. Each time a bomb is placed, the adjacent tiles' values are incremented by one, indicating the number of neighboring bombs. This setup mirrors the classic Minesweeper logic, where the numbers help players deduce safe tiles.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Implementing Mouse Input</h5>
+                To enhance gameplay, mouse events are used to interact with the grid. Adapted directly from javidx9's game engine, the right and left mouse buttons are mapped to reveal a tile and place a flag or question mark on a tile, respectively. This intuitive control scheme makes the game more accessible and engaging.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Game Mechanics: Revealing Tiles and Game Over</h5>
+                When a player clicks a spot on the grid, a series of conditional statements determine the outcome. If the clicked tile contains a bomb, the game ends with a game-over animation. If the tile reveals a number between 1 and 8, that number is displayed. If the tile is a zero, a recursive algorithm uncovers all adjacent tiles with a zero value and their neighboring numbers, revealing large swathes of the grid.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Player Interface and Feedback</h5>
+                Above the play grid, a small interface provides useful information to the player, including a bomb counter and a timer. The bomb counter decreases each time a player flags a tile as a bomb, helping players keep track of their progress. This interface enhances the player's experience by providing real-time feedback and essential game information.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Winning the Game</h5>
+                To win, the player must ensure that the number of unopened or flagged tiles equals the number of bombs on the grid. Revealing all safe tiles or correctly flagging all bombs results in a victory. Conversely, revealing a bomb triggers an explosive animation, signaling the end of the game.
+                <div class="row">
+                    <div class="imagecontainer pan2">
+                        <img class="imageblock pan" src="/assets/minesweeperg2.gif" alt="">
+                    </div>
+                    <div class="imagecontainer pan2">
+                        <img class="imageblock pan" src="/assets/minesweeperg.gif" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Conclusion and Download</h5>
+                Creating Minesweeper in the command prompt was a rewarding experience, blending nostalgic gameplay with modern coding techniques. The game is available for download via the link below. Enjoy playing and let me know your thoughts!
+                <br><br>
+                <a href="">Download</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="js/second.js"></script>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="favicon" rel="icon" href="/assets/WDD22.svg" type="image/svg+xml">
+    <title>Procedural Planet Generation in Unreal</title>
+    <script src="https://kit.fontawesome.com/00c01f606b.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/projectpage.css"> <!-- Link to your CSS file if you have one -->
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <h4>Procedural Planet Generation in Unreal</h4>
+
+        <!-- Update #06 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #06 Fixing terrain edge normals</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
+            <div class="textblock">introduction</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>title</h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <br><br>
+                <a href="">link</a>
+            </div>
+        </div>
+
+        <!-- Update #05 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #05 3D Height maps & data assets</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
+            <div class="textblock">introduction</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>title</h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <br><br>
+                <a href="">link</a>
+            </div>
+        </div>
+
+        <!-- Update #04 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #04 Experimenting with Unreal Engine master materials</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
+            <div class="textblock">introduction</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>title</h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <br><br>
+                <a href="">link</a>
+            </div>
+        </div>
+
+        <!-- Update #03 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #03 A New Approach: Refactoring the Code</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-29</div>
+            <div class="textblock">Hello everyone, <br> <br> and welcome to the third update on my game development journey using Unreal Engine and C++. This post marks a significant shift in my approach as I decided to refactor my old code entirely. The limitations I encountered with my initial hexagon tile-based approach, including problematic mesh data storage, poor UV mapping, and high draw calls leading to performance issues, prompted me to rethink my strategy. Although performance optimizations were possible, I opted to explore a new method, moving away from individual tile-based meshes.</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Moving to Large Squared Tiles</h5>
+                Instead of the previous tile-based approach, I decided to construct the planet using large squared tiles. This change simplifies future optimizations and Level of Detail (LOD) implementations. The concept of a cube sphere, where a sphere is represented with square tiles, served as a starting point. Additionally, I explored modifying an icosahedron by merging two triangles into a single quad. Implementing both solutions in parallel seemed prudent, allowing for comparative analysis. I began by creating flat projections of the terrain for both the cube sphere and modified icosahedron, which you can see below for comparison.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Transitioning to 3D</h5>
+                With the flat projections ready, the next step was positioning these tiles into their 3D configurations for both the cube sphere and icosahedron. Keeping the shapes flat initially, I adapted my interpolation code to accommodate the sharp edges in the icosahedron quads. The transition results are shown below, illustrating the shift from 2D projections to 3D tiles.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Normalizing and Finalizing the Sphere</h5>
+                The final step involved normalizing the vertices to form a spherical shape. By multiplying the normalized vertices by the desired radius, I achieved a large procedural sphere. This method ensures a smooth and continuous surface, essential for realistic planet generation.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Technical Details: UVs, Triangles, and Normals</h5>
+                Regarding UV mapping, triangle creation, and normal calculation, these steps were integrated into the terrain generation process. UVs and triangles were computed during the interpolation stage, ensuring accurate texture mapping. Normal vectors were calculated at the final stage, specifically for the 3D spherical shape. It's worth noting that this sequential approach resulted in some lighting artifacts during the intermediate stages, as the normals were only correct in the final 3D configuration.
+                <br><br>
+                Thank you for following along with this development update. The transition from hexagon tiles to a more efficient large squared tile approach opens up new possibilities for optimization and visual fidelity in my procedural planet generation. Stay tuned for more updates as I continue refining and enhancing this system!
+            </div>
+        </div>
+
+        <!-- Update #02 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #02 Skybox projection</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
+            <div class="textblock">introduction</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>title</h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <br><br>
+                <a href="">link</a>
+            </div>
+        </div>
+
+        <!-- Update #01 -->
+
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #01 Are hexagon the bestagons?!?</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
+            <div class="textblock">introduction</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>title</h5>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <br><br>
+                <a href="">link</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="js/second.js"></script>
+</html>
