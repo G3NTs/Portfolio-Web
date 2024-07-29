@@ -1,0 +1,297 @@
+.home {
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/bricks.svg);
+  background-size: auto 50%;
+  overflow: hidden;
+}
+
+.bureau {
+  position: relative;
+  background-image: url(/assets/desk.svg);
+  background-size: auto 82%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  top: 66%;
+}
+
+.monitor {
+  background-image: url(/assets/monitor_new.svg);
+  background-size: 100% 100%;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: -630px;
+  z-index: 980;
+  filter: drop-shadow(0px -6px 7px rgba(0, 0, 0, 0.7));
+}
+
+.mouse {
+  background-image: url(/assets/mouse.svg);
+  background-size: 100% 100%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 60%;
+  top: 15%;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.keyboard2 {
+  background-image: url(/assets/keyboard.svg);
+  background-size: 100% 100%;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 10%;
+}
+
+.pegboard {
+  background-image: url(/assets/pegboard.svg);
+  background-size: 100% 100%;
+  width: 600px;
+  height: 600px;
+  position: relative;
+  left: 67vw;
+  top: -30vh;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.7));
+}
+
+.plants {
+  background-image: url(/assets/plants.svg);
+  background-size: 100% 100%;
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: -19%;
+  left: 3.6%;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+}
+
+.placeholderclip2 {
+  position: relative;
+  height: auto;
+  width: 100%;
+  transform: translate(4%, -64%) scale(0.5);
+}
+
+.placeholderclip3 {
+  position: relative;
+  height: auto;
+  width: 100%;
+  transform: translate(0, -70%) scaleX(1);
+}
+
+.keyboard_pos {
+  position: absolute;
+  top: 60%;
+  left: 13.5%;
+}
+
+.keyboard {
+  width: 100%;
+  height: auto;
+  padding: 0 0;
+  padding-top: 8px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background: var(--whitesmoke4);
+}
+.keyboard__frame {
+  box-sizing: border-box;
+  width: 414px;
+  height: auto;
+  padding: 5px 5px;
+  border: solid 2px var(--whitesmoke);
+  border-radius: 16px;
+  background: var(--black4);
+  box-shadow: 0px 8px var(--gray);
+  transform: translate(0, -100px);
+  filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.7));
+}
+.keyboard__row {
+  display: flex;
+  width: 100%;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-sizing: border-box;
+}
+.keyboard .button-slick {
+  margin: 0px 5px;
+  height: 30px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.keyboard .button-slick.width_100 {
+  padding-left: 13px;
+  padding-right: 14px;
+}
+.keyboard .button-slick.width_110 {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+.keyboard .button-slick.width_120 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.keyboard .button-slick.width_150 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.keyboard .button-slick.width_155 {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.keyboard .button-slick.width_75 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.keyboard .button-slick.width_50 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.keyboard .button-slick.half {
+  height: 32px !important;
+  margin-bottom: 7px;
+}
+.keyboard .button-slick.width_fill {
+  width: 100%;
+  padding: 0px 10px;
+}
+.keyboard .spacer {
+  width: 200px;
+  height: auto;
+}
+
+.holder1 {
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--whitesmoke), var(--gray));
+  box-sizing: border-box;
+  position: absolute;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+  top: 70.4%;
+  left: 20%;
+}
+
+.holder2 {
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--whitesmoke), var(--gray));
+  box-sizing: border-box;
+  position: absolute;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+  top: 70.4%;
+  left: 73.5%;
+}
+
+.clock {
+  background-image: url(/assets/clock.svg);
+  background-size: 100% 100%;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  left: calc(50% - 5vw);
+  top: 5%;
+  filter: drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.7));
+}
+
+.coffee {
+  background-image: url(/assets/coffee.svg);
+  background-size: 100% 100%;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: 25%;
+  top: 15%;
+  filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.4));
+}
+
+.painting {
+  background: var(--whitesmoke);
+  background-size: 100% 100%;
+  width: 450px;
+  height: 600px;
+  position: absolute;
+  left: 7%;
+  top: 6%;
+  filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.4));
+  box-sizing: border-box;
+  border: 20px solid var(--black3);
+  padding: 30px 30px;
+  box-shadow: 2px 0px 0px var(--black2);
+}
+.painting__inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: var(--black4);
+  padding: 40px 10px;
+  color: var(--whitesmoke);
+  font-size: 46px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+}
+.painting__inner span {
+  color: var(--deepblue);
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+.painting__inner p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+
+.brick__transition {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 10px;
+  padding: 0 0;
+  margin: 0 0;
+  background: linear-gradient(to bottom, var(--black4), var(--whitesmoke));
+  z-index: -1;
+  overflow: visible;
+}
+
+.brick__left {
+  width: 50vw;
+  height: 50vh;
+  box-sizing: border-box;
+  background-image: url(/assets/bricks2left.svg);
+  background-size: 100% 100%;
+  padding: 0 0;
+  margin: 0 0;
+  position: absolute;
+}
+
+.brick__right {
+  width: 50vw;
+  height: 50vh;
+  box-sizing: border-box;
+  background-image: url(/assets/bricks2right.svg);
+  background-size: 100% 100%;
+  padding: 0 0;
+  margin: 0 0;
+  position: absolute;
+  left: 50%;
+  top: 1px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0 0;
+  margin: 0 0;
+  box-sizing: border-box;
+  border: none;
+}/*# sourceMappingURL=home.css.map */

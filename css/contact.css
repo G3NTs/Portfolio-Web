@@ -1,0 +1,232 @@
+.contact {
+  width: 100%;
+  height: 80vh;
+  margin: 0 0;
+  padding: 0 0;
+  margin-top: 0;
+}
+.contact__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  width: 100%;
+  height: 100px;
+  color: var(--black5);
+}
+.contact__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  height: 50px;
+  color: var(--black5);
+  transform: translateY(-40px);
+  margin-top: 10px;
+}
+
+.foreground-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 0;
+  padding: 0 0;
+  width: 100%;
+  height: 100%;
+}
+.foreground-frame .foreground-body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0 0;
+  padding: 0 0;
+  width: 100%;
+  height: 100%;
+  background: var(--whitesmoke);
+}
+.foreground-frame .inversed-arrow {
+  position: relative;
+  margin: 0 0;
+  padding: 0 0;
+  width: 0;
+  height: 0;
+  border-left: calc(50vw - var(--scrollbar-width) / 2) solid var(--whitesmoke);
+  border-right: calc(50vw - var(--scrollbar-width) / 2) solid var(--whitesmoke);
+  border-top: 10vh solid transparent;
+  border-bottom: 10vh solid var(--whitesmoke);
+  filter: drop-shadow(0 -10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.form-frame {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: auto;
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
+  transform: translateY(10px);
+}
+.form-frame form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 30px;
+  transform: translateY(-30px);
+}
+.form-frame form .form-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.form-frame form .form-row .input_data {
+  width: 100%;
+  height: 40px;
+  padding: 0 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+.form-frame form .form-row .input_data input,
+.form-frame form .form-row .input_data textarea {
+  display: block;
+  background: --whitesmoke;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-style: none;
+  outline: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+.form-frame form .form-row .input_data input[type=text],
+.form-frame form .form-row .input_data textarea {
+  background: transparent;
+}
+.form-frame form .form-row .input_data input:focus ~ label,
+.form-frame form .form-row .input_data textarea:focus ~ label,
+.form-frame form .form-row .input_data input:valid ~ label,
+.form-frame form .form-row .input_data textarea:valid ~ label {
+  transform: translateY(-25px);
+  font-size: 14px;
+  color: var(--black6);
+}
+.form-frame form .form-row .input_data input:focus,
+.form-frame form .form-row .input_data textarea:focus {
+  border: none;
+  border-style: none;
+}
+.form-frame form .form-row .input_data textarea:valid,
+.form-frame form .form-row .input_data input:valid {
+  border: none;
+  border-style: none;
+}
+.form-frame form .form-row .input_data textarea {
+  height: 70px;
+  resize: none;
+  padding-top: 10px;
+}
+.form-frame form .form-row .input_data label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+}
+.form-frame form .form-row .input_data .textarea label {
+  width: 100%;
+  bottom: 40px;
+  background: var(--whitesmoke);
+}
+.form-frame form .form-row .input_data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.form-frame form .form-row .input_data .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, var(--cornellred), var(--gamboge), var(--deepblue));
+  transform: translate(0, 4px) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.form-frame form .form-row .input_data .lower.underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, var(--cornellred), var(--gamboge), var(--deepblue));
+  transform: translate(0, 44px) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.form-frame form .form-row .input_data .right.underline:before {
+  background: linear-gradient(to right, var(--gamboge), var(--deepblue));
+}
+.form-frame form .form-row .input_data .left.underline:before {
+  background: linear-gradient(to right, var(--cornellred), var(--gamboge));
+}
+.form-frame form .form-row .input_data input:focus ~ .underline:before,
+.form-frame form .form-row .input_data input:valid ~ .underline:before {
+  transform: translate(0, 4px) scale(1);
+}
+.form-frame form .form-row .input_data textarea:focus ~ .underline:before,
+.form-frame form .form-row .input_data textarea:valid ~ .underline:before {
+  transform: translate(0, 44px) scale(1);
+}
+.form-frame form .form-row .form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 0;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+}
+.form-frame form .form-row .form-button input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: var(--black5);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-img {
+  display: block;
+  width: 40%;
+  height: auto;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: blur(1px);
+  transform: translateX(-5px);
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 30\" fill=\"black\"><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" style=\"font-family: 'Ubuntu', sans-serif;\">Contact</text></svg>");
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 60 30\" fill=\"black\"><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" style=\"font-family: 'Ubuntu', sans-serif; font-weight: 600;\">Contact</text></svg>");
+}/*# sourceMappingURL=contact.css.map */

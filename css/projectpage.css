@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500&family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --timberwolf: #dad2d8;
+  --darkcyan: #0f8b8d;
+  --lightdeepblue: #24a0ee;
+  --deepblue: #067bc2;
+  --darkdeepblue: #04639e;
+  --lightgamboge: #f5b04f;
+  --gamboge: #ed9a29;
+  --darkgamboge: #da9007;
+  --lightcornellred: #c73931;
+  --cornellred: #a8201a;
+  --darkcornellred: #83150f;
+  --darkmintgreen: #499167;
+  --darkslime: #008a43;
+  --slime: #00af54;
+  --lightslime: #11cc6b;
+  --lightpurple: #a969dd;
+  --purple: #7b2fb9;
+  --darkpurple: #652699;
+  --lightorange: #f77cc6;
+  --orange: #F15BB5;
+  --darkorange: #d1489a;
+  --night: #141115;
+  --darkgray: #202020;
+  --darkgray2: #252525;
+  --raisinblack: #3c3b3d;
+  --davygray: #4e4d4f;
+  --dimgray: #6d6c6e;
+  --whitesmoke: #f3f3f3;
+  --whitesmoke2: #f0f0f0;
+  --whitesmoke3: #eeeeee;
+  --whitesmoke4: #ebebeb;
+  --white: #ffffff;
+  --gray: #d6d6d6;
+  --black: #040303;
+  --black2: #0a100d;
+  --black3: #151515;
+  --black4: #1B1B1B;
+  --black5: #292929;
+  --black6: #383838;
+}
+
+body {
+  height: 200vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Create the blurred background */
+.background {
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  width: 110%;
+  height: 110%;
+  background-image: url(/website_v3/assets/background.svg); /* Replace with your background image */
+  filter: blur(10px); /* Adjust the blur intensity */
+  z-index: -1; /* Place it behind the content */
+}
+
+/* Style the content div */
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 1066.6666666667px;
+  width: 100%; /* Fixed width */
+  min-height: 100vh; /* At least full viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  z-index: 1; /* Place it above the background */
+}
+
+h4 {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--white);
+  filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+  margin: 0 auto;
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 20px 20px;
+}
+
+.update {
+  width: 90%;
+  height: auto;
+  min-height: 10vh;
+  border-radius: 8px;
+  border: 2px solid var(--black3);
+  margin: auto;
+}
+.update h5 {
+  width: 100%;
+  height: auto;
+  padding: 10px 10px;
+  background: var(--black5);
+  color: var(--whitesmoke4);
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+}
+.update__inner {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--black4);
+  background: var(--black6);
+  color: var(--whitesmoke4);
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  padding: 5px 5px;
+}
+
+.box {
+  border-radius: 15px;
+  background: rgba(243, 243, 243, 0.8);
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 8px black;
+  overflow: hidden;
+  height: auto;
+  max-height: 3000px;
+  will-change: opacity, max-height;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+.box .boxwindowbar {
+  width: 100%;
+  height: 30px;
+  background: var(--whitesmoke);
+  box-sizing: border-box;
+  padding: 0 0;
+  margin: 0 0;
+}
+.box .boxwindowbar ul {
+  padding: 0 0;
+  margin: 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.box .boxwindowbar ul span {
+  margin-right: auto;
+  margin-left: 14px;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--black6);
+  font-weight: 600;
+}
+.box .boxwindowbar ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.box .boxwindowbar ul li:hover {
+  background: var(--gray);
+  margin-top: 0px;
+  margin-right: 0px;
+}
+.box .boxwindowbar ul li i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transparent {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.minature {
+  max-height: 30px !important;
+}
+
+.textblock {
+  padding: 14px 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.textblock h5 {
+  padding: 10px 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.textdivider {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--white);
+  border-radius: 1px;
+  width: calc(100% - 28px);
+  margin: auto;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.topblock {
+  padding: 7px 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.1);
+}
+.topblock span {
+  color: var(--darkdeepblue);
+}
+
+.imagecontainer {
+  display: block;
+  width: 50vw;
+  max-width: 500px;
+  height: 50vw;
+  max-height: 500px;
+  margin: 20px auto;
+  padding: 0 0;
+  border-bottom: 2px solid white;
+  border-right: 2px solid #dadada;
+  border-top: 2px solid rgba(26, 26, 26, 0.7);
+  border-left: 2px solid rgba(97, 97, 97, 0.7);
+  background: #1a1a1a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cpp {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid #dadada;
+  border-top: 2px solid rgba(26, 26, 26, 0.7);
+  border-left: 2px solid rgba(97, 97, 97, 0.7);
+  padding: 0 10px !important;
+}
+
+.zoom {
+  width: auto;
+  height: auto;
+  transform-origin: top left;
+  transform: scale(0.8);
+}
+
+.zoom2 {
+  height: 20vw;
+  max-height: 200px;
+}
+
+.zoom3 {
+  height: 30vw;
+  max-height: 300px;
+  width: 50vw;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.pan2 {
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+.pan {
+  display: flex;
+  margin: auto auto;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.vid {
+  border-radius: 4px;
+  margin: 0 0;
+  width: 100%;
+  transform: scaleY(1.03);
+}
+
+.vidpan {
+  height: 100% !important;
+}/*# sourceMappingURL=projectpage.css.map */
