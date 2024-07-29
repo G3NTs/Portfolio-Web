@@ -5,6 +5,9 @@
   margin: 0 0;
   padding: 0 0;
 }
+.blankplaceholder{
+  width: 100%;
+}
 .skills__bar__toptext {
   display: flex;
   justify-content: center;
