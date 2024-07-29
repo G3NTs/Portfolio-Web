@@ -475,8 +475,8 @@
 .mask1 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/solidworks.svg);
-  mask-image: url(/assets/solidworks.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/solidworks.svg);
+  mask-image: url(/Portfolio-Web/assets/solidworks.svg);
   -webkit-mask-size: 140%;
           mask-size: 140%;
   -webkit-mask-repeat: no-repeat;
@@ -490,8 +490,8 @@
 .mask2 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/lammps.svg);
-  mask-image: url(/assets/lammps.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/lammps.svg);
+  mask-image: url(/Portfolio-Web/assets/lammps.svg);
   -webkit-mask-size: 240%;
           mask-size: 240%;
   -webkit-mask-repeat: no-repeat;
@@ -504,8 +504,8 @@
 .mask3 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/zbrush.svg);
-  mask-image: url(/assets/zbrush.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/zbrush.svg);
+  mask-image: url(/Portfolio-Web/assets/zbrush.svg);
   -webkit-mask-size: 140%;
           mask-size: 140%;
   -webkit-mask-repeat: no-repeat;
@@ -518,8 +518,8 @@
 .mask4 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/substance.svg);
-  mask-image: url(/assets/substance.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/substance.svg);
+  mask-image: url(/Portfolio-Web/assets/substance.svg);
   -webkit-mask-size: 90%;
           mask-size: 90%;
   -webkit-mask-repeat: no-repeat;
@@ -532,8 +532,8 @@
 .mask5 {
   width: 100%;
   height: 100%;
-  -webkit-mask-image: url(/assets/latex.svg);
-  mask-image: url(/assets/latex.svg);
+  -webkit-mask-image: url(/Portfolio-Web/assets/latex.svg);
+  mask-image: url(/Portfolio-Web/assets/latex.svg);
   -webkit-mask-size: 100%;
           mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
