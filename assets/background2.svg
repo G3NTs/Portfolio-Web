@@ -3,7 +3,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 2160" style="enable-background:new 0 0 1920 2160;" xml:space="preserve">
 <style type="text/css">
-	.st0{clip-path:url(#SVGID_00000105400283810952303480000011535539407132367291_);}
+	.st0{clip-path:url(#SVGID_00000080198767666387665760000006454237242006214823_);}
 	.st1{fill:#19679C;}
 	.st2{fill:#1B1C29;}
 	.st3{fill:#387894;}
@@ -39,10 +39,10 @@
 	<defs>
 		<rect id="SVGID_1_" x="-0.02" width="1920.02" height="2160.01"/>
 	</defs>
-	<clipPath id="SVGID_00000135672780296281597710000010553185948274210960_">
+	<clipPath id="SVGID_00000119795859489991437520000003597859238478329016_">
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 	</clipPath>
-	<g style="clip-path:url(#SVGID_00000135672780296281597710000010553185948274210960_);">
+	<g style="clip-path:url(#SVGID_00000119795859489991437520000003597859238478329016_);">
 		<g>
 			<path class="st1" d="M1924.47,1572.88c0,26.53,0,53.07,0,79.6c-6.62,5.55-11.08-2.71-16.22-3.26
 				c4.86,2.45,11.22,3.83,10.73,12.81c-12.1,10.89-25.44,18.45-41.24,19.46c-10.24-1.29-20.26,1.44-30.4,2.12
