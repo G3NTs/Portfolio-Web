@@ -275,7 +275,7 @@
   margin: 12px 12px;
 }
 .projects__card__inner__img__img1 {
-  background-image: url(/assets/minesweeperg2.gif);
+  background-image: url(../assets/minesweeperg2.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -285,49 +285,49 @@
   transform: translate(-3px, -290px);
 }
 .projects__card__inner__img.img1 {
-  background-image: url(/assets/minesweeperg.gif);
+  background-image: url(../assets/minesweeperg.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img2 {
-  background-image: url(/assets/sphereprojectgraphics.png);
+  background-image: url(../assets/sphereprojectgraphics.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img3 {
-  background-image: url(/assets/Everlasting.png);
+  background-image: url(../assets/Everlasting.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img4 {
-  background-image: url(/assets/python.gif);
+  background-image: url(../assets/python.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img5 {
-  background-image: url(/assets/);
+  background-image: url(../assets/);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img6 {
-  background-image: url(/assets/lammps.png);
+  background-image: url(../assets/lammps.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: calc(100% - 24px);
 }
 .projects__card__inner__img.img7 {
-  background-image: url(/assets/Portal2.gif);
+  background-image: url(../assets/Portal2.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;

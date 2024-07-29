@@ -62,7 +62,7 @@ body {
   left: -20px;
   width: 110%;
   height: 110%;
-  background-image: url(/assets/background.svg); /* Replace with your background image */
+  background-image: url(../assets/background.svg); /* Replace with your background image */
   filter: blur(10px); /* Adjust the blur intensity */
   z-index: -1; /* Place it behind the content */
 }
