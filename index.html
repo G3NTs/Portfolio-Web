@@ -288,6 +288,21 @@
                                             </ul>
                                         </div>
                         
+                                        <div class="quoterow margin10">
+                                            <div class="quotebox">
+                                                <div class="quotebox__text">
+                                                    <p>Bachelor Mechanical Engineering<br>University of Twente</p>
+                                                    <span>- 2023 -</span>
+                                                </div>
+                                            </div>
+                                            <div class="quotebox">
+                                                <div class="quotebox__text">
+                                                    <p>Technasium VWO diploma<br>Het Streek</p>
+                                                    <span>- 2016 -</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="referrals box" id="referrals">
                                         <div class="boxwindowbar">
@@ -879,7 +894,9 @@
                                 <div class="projects__card__inner">
                                     <div class="image-frame">
                                         <div class="label_back red"></div>
-                                        <div class="projects__card__inner__img img1"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img1"></div>
+                                        </div>
                                         <div class="label red">
                                             <div class="label__background red">
                                                 <i class="fa-solid fa-gamepad"></i>
@@ -895,109 +912,19 @@
                                     </div>
                                 </div>
                             </li>
-                            <!-- CARD NUMBER 2 -->
-                            <li class="projects__card">
-                                <div class="projects__card__inner">
-                                    <div class="image-frame">
-                                        <div class="label_back red"></div>
-                                        <div class="projects__card__inner__img img2"></div>
-                                        <div class="label red">
-                                            <div class="label__background red">
-                                                <i class="fa-solid fa-gamepad"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="button-frame offset">
-                                        <button class="button-slick red-text" onclick="location.href='planet.html'">view project</button>
-                                    </div>
-                                    <div class="projects__card__inner__text ">
-                                        <h4>Icosahedron Sphere</h4>
-                                        <p>Procedural generation of a hexagon grid on a spherical planet in the unreal
-                                            engine
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- CARD NUMBER 3 -->
-                            <li class="projects__card">
-                                <div class="projects__card__inner">
-                                    <div class="image-frame">
-                                        <div class="label_back green"></div>
-                                        <div class="projects__card__inner__img img3"></div>
-                                        <div class="label green long3">
-                                            <div class="label__background green">
-                                                <i class="fa-solid fa-paintbrush"></i>
-                                                <i class="fa-solid fa-gamepad"></i>
-                                                <i class="fa-solid fa-music"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="button-frame offset">
-                                        <button class="button-slick green-text" onclick="location.href='everlasting.html'">view project</button>
-                                    </div>
-                                    <div class="projects__card__inner__text ">
-                                        <h4 class="">Everlasting Nightmare</h4>
-                                        <p class="">My first ever game made in the Unity engine</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- CARD NUMBER 4 -->
-                            <li class="projects__card">
-                                <div class="projects__card__inner">
-                                    <div class="image-frame">
-                                        <div class="label_back orange"></div>
-                                        <div class="projects__card__inner__img img4"></div>
-                                        <div class="label orange">
-                                            <div class="label__background orange">
-                                                <i class="fa-solid fa-atom"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="button-frame offset">
-                                        <button type="submit" onclick="window.open('assets/N_Body_Simulations_Using_BarnesHut.pdf')" class="button-slick orange-text">Download Paper</button>
-                                    </div>
-                                    <div class="projects__card__inner__text ">
-                                        <h4 class="">N-Body simulations</h4>
-                                        <p class="">Exploring oct trees and the barnes-hut algorithm</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- CARD NUMBER 5 -->
-                            <li class="projects__card">
-                                <div class="projects__card__inner">
-                                    <div class="image-frame">
-                                        <div class="label_back orange"></div>
-                                        <div class="projects__card__inner__img img6"></div>
-                                        <div class="label orange">
-                                            <div class="label__background orange">
-                                                <i class="fa-solid fa-atom"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="button-frame offset">
-                                        <button  type="submit" onclick="openFiles()" class="button-slick orange-text">Download Papers</button>
-                                        <script>
-                                            function openFiles() {
-                                                var popup = window.open("", "_blank", "width=100,height=100");
-                                                alert("Please disable your pop-up blocker to use this feature.");
-                                                popup.close(); // Close the test popup
-                                                window.open('assets/LAMMPS_PAPER_2021.pdf');
-                                                window.open('assets/LAMMPS_Social_Embedding_2021_paper.pdf');
-                                            }
-                                        </script>
-                                    </div>
-                                    <div class="projects__card__inner__text ">
-                                        <h4 class="">Thermal Rectifier</h4>
-                                        <p class="">Atom level thermal simulations using LAMMPS software</p>
-                                    </div>
-                                </div>
-                            </li>
                             <!-- CARD NUMBER 6 -->
                             <li class="projects__card">
                                 <div class="projects__card__inner">
                                     <div class="image-frame">
                                         <div class="label_back red"></div>
-                                        <div class="projects__card__inner__img img7"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="video-wrapper">
+                                                <video playsinline autoplay muted loop poster="cake.jpg" width="100%">
+                                                  <source src="../assets/teleportation2.mp4" type="video/mp4">
+                                                  Your browser does not support the video tag.
+                                                </video>
+                                              </div>
+                                        </div>
                                         <div class="label red">
                                             <div class="label__background red">
                                                 <i class="fa-solid fa-gamepad"></i>
@@ -1022,15 +949,123 @@
                                     </div>
                                 </div>
                             </li>
+                            <!-- CARD NUMBER 3 -->
+                            <li class="projects__card">
+                                <div class="projects__card__inner">
+                                    <div class="image-frame">
+                                        <div class="label_back green"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img3"></div>
+                                        </div>
+                                        <div class="label green long3">
+                                            <div class="label__background green">
+                                                <i class="fa-solid fa-paintbrush"></i>
+                                                <i class="fa-solid fa-gamepad"></i>
+                                                <i class="fa-solid fa-music"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-frame offset">
+                                        <button class="button-slick green-text" onclick="location.href='everlasting.html'">view project</button>
+                                    </div>
+                                    <div class="projects__card__inner__text ">
+                                        <h4 class="">Everlasting Nightmare</h4>
+                                        <p class="">My first ever game made in the Unity engine</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- CARD NUMBER 4 -->
+                            <li class="projects__card">
+                                <div class="projects__card__inner">
+                                    <div class="image-frame">
+                                        <div class="label_back orange"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img4"></div>
+                                        </div>
+                                        <div class="label orange">
+                                            <div class="label__background orange">
+                                                <i class="fa-solid fa-atom"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-frame offset">
+                                        <button type="submit" onclick="window.open('assets/N_Body_Simulations_Using_BarnesHut.pdf')" class="button-slick orange-text">Download Paper</button>
+                                    </div>
+                                    <div class="projects__card__inner__text ">
+                                        <h4 class="">N-Body simulations</h4>
+                                        <p class="">Exploring oct trees and the barnes-hut algorithm</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- CARD NUMBER 2 -->
+                            <li class="projects__card">
+                                <div class="projects__card__inner">
+                                    <div class="image-frame">
+                                        <div class="label_back red"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img2"></div>
+                                        </div>
+                                        <div class="label red">
+                                            <div class="label__background red">
+                                                <i class="fa-solid fa-gamepad"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-frame offset">
+                                        <button class="button-slick red-text" onclick="location.href='planet.html'">view project</button>
+                                    </div>
+                                    <div class="projects__card__inner__text ">
+                                        <h4>Icosahedron Sphere</h4>
+                                        <p>Procedural generation of a hexagon grid on a spherical planet in the unreal
+                                            engine
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- CARD NUMBER 5 -->
+                            <li class="projects__card">
+                                <div class="projects__card__inner">
+                                    <div class="image-frame">
+                                        <div class="label_back orange"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img6"></div>
+                                        </div>
+                                        <div class="label orange">
+                                            <div class="label__background orange">
+                                                <i class="fa-solid fa-atom"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-frame offset">
+                                        <button  type="submit" onclick="openFiles()" class="button-slick orange-text">Download Papers</button>
+                                        <script>
+                                            function openFiles() {
+                                                var popup = window.open("", "_blank", "width=100,height=100");
+                                                alert("Please disable your pop-up blocker to use this feature.");
+                                                popup.close(); // Close the test popup
+                                                window.open('assets/LAMMPS_PAPER_2021.pdf');
+                                                window.open('assets/LAMMPS_Social_Embedding_2021_paper.pdf');
+                                            }
+                                        </script>
+                                    </div>
+                                    <div class="projects__card__inner__text ">
+                                        <h4 class="">Thermal Rectifier</h4>
+                                        <p class="">Atom level thermal simulations using LAMMPS software</p>
+                                    </div>
+                                </div>
+                            </li>
                             <!-- CARD NUMBER 7 -->
                             <li class="projects__card ">
                                 <div class="projects__card__inner">
                                     <div class="image-frame">
                                         <div class="label_back blue"></div>
-                                        <div class="projects__card__inner__img img5"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img8"></div>
+                                        </div>
                                         <div class="label blue">
                                             <div class="label__background blue">
                                                 <i class="fa-solid fa-seedling"></i>
+                                                <i class="fa-solid fa-microchip"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -1043,11 +1078,37 @@
                                     </div>
                                 </div>
                             </li>
+                            <!-- CARD NUMBER 8 -->
+                            <li class="projects__card ">
+                                <div class="projects__card__inner">
+                                    <div class="image-frame">
+                                        <div class="label_back green"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img5"></div>
+                                        </div>
+                                        <div class="label green">
+                                            <div class="label__background green">
+                                                <i class="fa-solid fa-paintbrush"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="button-frame offset">
+                                        <button class="button-slick green-text" onclick="location.href='Monster.html'">view project</button>
+                                    </div>
+                                    <div class="projects__card__inner__text ">
+                                        <h4 class="">Blender Werewolf Sculpt</h4>
+                                        <p class="">A early sculpt of a werewolf model, planned to be used in Unreal Engine 5</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- CARD NUMBER 9 -->
                             <li class="projects__card ">
                                 <div class="projects__card__inner">
                                     <div class="image-frame">
                                         <div class="label_back purple"></div>
-                                        <div class="projects__card__inner__img img5"></div>
+                                        <div class="projects__card__inner__img">
+                                            <div class="img9"></div>
+                                        </div>
                                         <div class="label purple">
                                             <div class="label__background purple">
                                                 <i class="fa-solid fa-microchip"></i>
@@ -1055,11 +1116,11 @@
                                         </div>
                                     </div>
                                     <div class="button-frame offset">
-                                        <button class="button-slick purple-text">view project</button>
+                                        <button class="button-slick purple-text" onclick="window.open('assets/DesignAPenPlotter.pdf')"">Download Paper</button>
                                     </div>
                                     <div class="projects__card__inner__text ">
-                                        <h4 class="">art?</h4>
-                                        <p class="">what art?</p>
+                                        <h4 class="">Pen Plotter Robotics</h4>
+                                        <p class="">A mechanical pen plotter machine, controlled through Simulink</p>
                                     </div>
                                 </div>
                             </li>

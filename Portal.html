@@ -14,6 +14,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" rel="stylesheet" />
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,20 +36,104 @@
         <div class="box">
             <div class="boxwindowbar">
                 <ul class="window-buttons">
+                    <span>UE5 Portals #05 GameJam Submission & Future Prospects</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-31</div>
+            <div class="textblock">
+                I'm excited to announce that the final build of my portal mechanics project is now available! You can access and download the project from my GitHub repository via the following link:
+                <br><br>
+                <a href="https://github.com/G3NTs/UE-5.4---Portals/tree/main/UE5/Cpp/G3NTs">GitHub Repository: UE-5.4 - Portals</a>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Current Build Features</h5>
+                The build includes a comprehensive set of features, meticulously crafted to create a seamless portal experience in Unreal Engine 5.4.2 using C++:
+                <ul>
+                    <li><span>Portal Scene Capture to Texture Target:</span> Real-time rendering of the portal view.</li>
+                    <li><span>Scene Capture Clip Plane:</span> Prevents the virtual camera from being obscured by walls.</li>
+                    <li><span>Player/Object Teleportation:</span> Smooth transitions through portals.</li>
+                    <li><span>Player/Object Clip Plane:</span> Prevents objects from sticking through portals.</li>
+                    <li><span>Player/Object Cloning:</span> See yourself emerge on the other side of the portal.</li>
+                    <li><span>Player Control Rotation Fixes:</span> Resolves control and actor rotation bugs.</li>
+                    <li><span>Player Character Animation Syncing:</span> Ensures animations are consistent across portals.</li>
+                    <li><span>Portal Edge Colliders:</span> Prevents players and objects from clipping through the portal edges.</li>
+                    <li><span>Portal Edge Color Options:</span> Customize the appearance of portal edges.</li>
+                    <li><span>Portal Gun:</span> Shoot and place portals dynamically.</li>
+                    <li><span>Portal Wall Placement with Edge Detection:</span> Ensures portals fit properly on walls.</li>
+                    <li><span>Portal Placement Rotations:</span> Align portals correctly with player orientation.</li>
+                    <li><span>Portal Overlap Prevention:</span> Avoids overlapping portals.</li>
+                    <li><span>Portal Surface Dynamic Collision Meshes:</span> Adapts collision meshes in real-time to portal placements.</li>
+                </ul>
+                <br><br>
+                This project is built in Unreal Engine 5.4.2 using C++.  It draws inspiration from various sources, including a classic tutorial on portal mechanics by Froyok. For those interested in exploring the basics of teleportation mechanics, I highly recommend checking out <a href="https://www.froyok.fr/blog/2019-03-creating-seamless-portals-in-unreal-engine-4/">Froyok's blog post</a>.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Future Plans and Ideas</h5>
+                There are several features and improvements I never got to implementing. However, if I ever return to this project, here are the planned future updates, including:
+                <ul>
+                    <li><span>Draw Call Reduction:</span> Implementing the stencil buffer and bRenderToMainThread options in the scene capture component to optimize performance.</li>
+                    <li><span>Portal Vortex:</span> A feature to make it easier to jump into portals.</li>
+                    <li><span>Minimum Portal Exit Velocity:</span> Ensuring a consistent exit speed when leaving a portal.</li>
+                    <li><span>Raycasts Through Portals:</span> Allowing raycasts to pass through portals for more dynamic interactions.</li>
+                    <li><span>Portals Through Portals?:</span> Exploring the possibility of seeing through multiple portals.</li>
+                    <li><span>Portal Relative Physics:</span> Creating unique physics interactions relative to the portal's orientation.</li>
+                </ul>
+            </div>
+            <div class="textdivider"></div>
+            <div class="imagecontainer vidpan2">
+                <video id="myVideo" class="vid" width="500" height="100%" controls>
+                    <source src="assets/finalteleport.mp4" type="video/mp4">
+            </div>
+        </div>
+        <!-- ================================== -->
+        <div class="box">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
                     <span>UE5 Portals #04 Dynamic collisions</span>
                     <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
                     <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-18</div>
-            <div class="textblock">Placing portals on walls is nice and all. But can u phase through solid objects?</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-31</div>
+            <div class="textblock">To facilitate transitions for objects and players through portals placed on solid walls, I implemented two key collision methods. These techniques ensure that actors can move through portals without affecting the collisions of any other objects.</div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <h5>Dynamic Collisions for Seamless Portal Transitions</h5>
+                <ul>
+                    <li>
+                        <span>Custom Collision Channel:</span>
+                        A custom collision channel was created to manage collision interactions between specific objects. This channel allows for enabling and disabling collisions as needed, preventing unintended interactions as objects approach or pass through a portal.
+                    </li>
+                    <li>
+                        <span>Dynamic Collision Mesh:</span>
+                        <ul>
+                            <li>A custom geometry blueprint was developed to dynamically update the collision mesh at runtime. When a portal is placed, the system creates a squared opening in the collision mesh at the portal's location. This ensures that players and objects can pass through the portal without colliding with the solid wall.</li>
+                            <li>The portal’s position data is sent to the geometry script blueprint using delegates, enabling updates to the collision mesh to be called from the portal manager script.</li>
+                        </ul>
+                    </li>
+                </ul>
                 <br><br>
-                <a href="">link</a>
+                Below are snapshots of the blueprint responsible for these dynamic mesh operations, demonstrating how the collision mesh adapts in real-time. Additionally, a video showcases the dynamic collision system in action, highlighting the smooth transitions and interactions made possible through these methods.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe2">
+                    <img class="rowimg" src="assets/blueprint1.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe2">
+                    <img class="rowimg" src="assets/blueprint2.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="imagecontainer vidpan2">
+                <video id="myVideo" class="vid" width="500" height="100%" controls>
+                    <source src="assets/collision.mp4" type="video/mp4">
             </div>
         </div>
         <!-- ================================== -->
@@ -57,15 +146,42 @@
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-18</div>
-            <div class="textblock">introduction</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-31</div>
+            <div class="textblock">To enhance the interactivity and realism of the portal mechanics, I developed a portal gun that shoots portal projectiles to place portals on surfaces. This process involved several key steps:</div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <h5>Creating a Portal Gun with Projectile-Based Portal Placement</h5>
+                <ul>
+                    <li>
+                        <span>Portal Projectile Class:</span>
+                        I created a PortalProjectile class, which defines the properties and behavior of the projectiles fired from the portal gun. These projectiles travel in a straight line and detect collisions with surfaces.
+                    </li>
+                    <li>
+                        <span>Surface Detection:</span>
+                        Upon hitting a surface, the projectile checks if the surface is suitable for portal placement. This involves ensuring that the surface is large enough and oriented correctly to host a portal.
+                    </li>
+                    <li>
+                        <span>Placement Adjustment:</span>
+                        If the initial impact point doesn't provide enough space for the portal, the system attempts to slightly adjust the portal's position to find a suitable spot. This adjustment process ensures the portal can fit within the bounds of the surface. Additionally, if another portal is already present nearby, the system moves the new portal away to avoid overlapping, similar to the surface placement adjustment.
+                    </li>
+                    <li>
+                        <span>Orientation Matching:</span>
+                        The portal's orientation is aligned with the player's facing direction at the moment of placement. This ensures that the portal aligns naturally with the player's perspective, maintaining a coherent visual and gameplay experience.
+                    </li>
+                </ul>
                 <br><br>
-                <a href="">link</a>
+                This setup mimics portals original portal placement mechanics as closely as I could get it in the limited time I had.
             </div>
+            <div class="textdivider"></div>
+            <div class="imagecontainer vidpan">
+                <video id="myVideo" class="vid" width="500" height="100%" controls>
+                    <source src="assets/placement.mp4" type="video/mp4">
+            </div>
+            <div class="imagecontainer vidpan">
+                <video id="myVideo" class="vid" width="500" height="100%" controls>
+                    <source src="assets/placement2.mp4" type="video/mp4">
+            </div>   
+            <div class="textdivider"></div><br>
         </div>
         <!-- ================================== -->
         <div class="box">
@@ -77,14 +193,69 @@
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-18</div>
-            <div class="textblock">introduction</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-31</div>
+            <div class="textblock">In Unreal Engine, creating basic surface-level portals is relatively straightforward. However, this simplicity often leads to visual artifacts. By employing key techniques such as actor cloning, clipping, and animation synchronization, you can effectively eliminate these issues and achieve seamless portal interactions.</div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <h5>Cloning Actors through Portals</h5>
+                The process of cloning actors through portals involves detecting when a teleportable actor is near a portal, creating a duplicate on the other side (linked portal), and maintaining synchronization between them. Here’s a breakdown of how this was achieved:
                 <br><br>
-                <a href="">link</a>
+                <ul>
+                    <li>
+                        <span>Detection and Creation:</span>
+                        <ul>
+                            <li>Detect when a teleportable actor enters a trigger zone near a portal. In my case, I could just re-use the same collider I had set up for the teleportation logic.</li>
+                            <li>Instantiate a duplicate of the actor on the other side of the linked portal using Unreal Engine’s spawning and positioning functions.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Synchronization:</span>
+                        <ul>
+                            <li>Using the same transformation formula's used for teleportation, the location, orientation, velocity, and scale relative to the linked portal are matched to the original.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Preventing Infinite Duplication:</span>
+                        <ul>
+                            <li>To prevent cloned actors from being teleported or triggering the clone algorithm, they are not added to the teleportation TMap discussed in the previous blog. This ensures that teleportation logic is not applied to the cloned actors.</li>
+                            <li>Instead, a new TMap is maintained which stores the cloned actors. This map is used as a reference list, which prevent any teleportable actor from cloning itself twice through the same portal.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Clipping with Mask/Clip Plane</h5>
+                Clipping prevents visual artifacts when actors move through portals. By using a mask or clip plane, you can hide parts of the actor that extend beyond the portal boundary. Here’s how I implemented this:
+                <ul>
+                    <li>
+                        <span>Using 3D Box Mask:</span>
+                        <ul>
+                            <li>I created a new material node to allow passing in material parameters.</li>
+                            <li>By enabling masking in the material and combining it with a 3D box mask node, these parameters can be used to dynamically set the mask's location.</li>
+                            <li>To update the material parameters at runtime, the materials are converted to dynamic materials using C++ code.</li>
+                            <li>Finally, this masking logic was integrated into the existing materials of all teleportable actors.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br><br>
+                A visual example of the 3d box mask is shown in the following two images. Left shows the 3d box mask disabled, and right shows it enabled.
+            </div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe">
+                    <img class="rowimg moveup" src="assets/clip1.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe">
+                    <img class="rowimg" src="assets/clip2.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Animation Synchronization</h5>
+                To prevent visual discrepancies between original and cloned actors, animations must be synchronized. This involves integrating Unreal Engine’s animation graph with C++ to ensure synced animation playback. The following image shows a close-up of one of these animation de-syncs:
+            </div>
+            <div class="imagecontainer smaller">
+                <img class="imga" src="assets/desync.png" alt="">
             </div>
         </div>
         <!-- ================================== -->
@@ -97,19 +268,45 @@
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-18</div>
-            <div class="textblock">introduction</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-07-30</div>
+            <div class="textblock">Hey there, welcome to the very first blog post about my portal mechanics submission for the CaptainCoder's "Mechanically Challenged" gamejam!</div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
-                <br><br>
-                <a href="">link</a>
+                <h5>Portal Setup</h5>
+                Two main elements are involved: the "entry" portal where the player looks through and the "exit" portal which acts as a window to the destination area. The view through the entry portal is rendered by a SceneCaptureComponent to a RenderTexture, which is then displayed on the surface of the exit portal.
             </div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>Early Screen capture</h5>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, ullam!
+                <h5>Camera Positioning</h5>
+                <p>To make the portal effect believable, the capture camera must be positioned and oriented in a specific way relative to the portals and the player:
+                    <ul>
+                        <li>
+                            <span>Relative Positioning:</span> The capture camera’s position is calculated by reflecting the player's position through the plane of the entry portal to the exit portal. This can be mathematically expressed as: 
+                            <br><br>\( M = T_p \cdot T_{lp}^{-1} \cdot T_{pc}\)<br><br>
+                            Where: 
+                            <ul>
+                                <li>\(M\) is the resulting transformation matrix that represents the final camera position and orientation.</li>
+                                <li>\(T_p\) is the local-to-world transformation matrix of the entry portal.</li>
+                                <li>\(T_{lp}^{-1}\) is the inverse of the local-to-world transformation matrix of the linked portal (which transforms from world space to the linked portal's local space).</li>
+                                <li>\(T_{pc}\) is the local-to-world transformation matrix of the player camera.</li>
+                            </ul>
+                            This formula shifts the player's position relative to the entry portal to a corresponding position relative to the exit portal, ensuring that the perspective aligns correctly as the player moves. The formula was further refined to separate the translational and rotational components. An additional 180 degrees was then added to the rotational component, which is necessary to mirror the projection correctly.
+                        </li>
+                        <li>
+                            <span>Screen UV Coordinates:</span> The render texture captured by the secondary camera needs to be scaled correctly to fit the portal's surface. This is done using screen UV coordinates, which map the texture onto the portal's surface. The uv matching for unreal is done within the Unreal Engine Material Shader. Some important notes:
+                            <ul>
+                                <li>
+                                    Aspect Ratio Considerations: It's crucial to maintain the aspect ratio of the rendered texture to avoid stretching the image, which would break the illusion of a seamless window into another space. Whenever working within the Editor, realize that the aspect ratio of the editor play window is not consistent. 
+                                </li>
+                                <li>
+                                    FOV Considerations: The field of view of the capture camera should match the player's camera to ensure a consistent perspective. If the portals differ in size, adjustments might be needed to the FOV to maintain visual consistency.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    The image below shows some of my early experimentation with the scene capture components for the portals. At this stage, both the necessary 180-degree rotation and the correct UV screen coordinates were missing. This led to misaligned and improperly scaled textures on the portal surfaces, breaking the illusion of seamless portal transitions.
+                </p>
                 <div class="imagecontainer zoom3">
                     <img class="imageblock pan" src="assets/EarlyPNG2.png" alt="">
                 </div>
@@ -136,10 +333,12 @@
             <div class="textdivider"></div>
             <div class="textblock">
                 <h5>Teleporting objects</h5>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis!
+                The teleportation of objects functions similarly to that of the player character. However, not all actors should be teleportable; static, immobile actors near the portal should be excluded from the teleportation logic. To identify which actors can be teleported, a custom C++ component is added to them. These identified actors are then stored in a TMap, which the teleportation logic iterates through.
+                <br><br>
+                Each teleportable actor can than be teleported through the portal as shown with the example video below:
                 <div class="imagecontainer vidpan">
-                    <video class="vid" width="500" height="100%" controls>
-                        <source src="assets/tel3.mp4" type="video/mp4">
+                    <video id="myVideo" class="vid" width="500" height="100%" controls>
+                        <source src="assets/tel5.mp4" type="video/mp4">
                 </div>
             </div>
         </div>
