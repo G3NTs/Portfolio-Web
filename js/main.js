@@ -694,7 +694,7 @@ window.addEventListener('load', function() {
 
         // Set position
         var xOffset = containerRect.left - parentToolRect.left;
-        var yOffset = containerRect.top - parentToolRect.top;
+        var yOffset = containerRect.top - parentToolRect.top + 50;
 
         console.log("top of the container: " + containerRect.top);
         backgroundList.style.transform = 'translate(' + (xOffset) + 'px, ' + (yOffset) + 'px)';
