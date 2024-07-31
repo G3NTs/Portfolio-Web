@@ -3,6 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 :root {
   --timberwolf: #dad2d8;
   --darkcyan: #0f8b8d;

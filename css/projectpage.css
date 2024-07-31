@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -50,7 +51,6 @@
 body {
   height: 200vh;
   margin: 0;
-  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -65,6 +65,8 @@ body {
   background-image: url(../assets/background.svg); /* Replace with your background image */
   filter: blur(10px); /* Adjust the blur intensity */
   z-index: -1; /* Place it behind the content */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-repeat: no-repeat; /* Prevents repeating the background */
 }
 
 /* Style the content div */
@@ -132,7 +134,7 @@ h4 {
   box-shadow: 0px 0px 8px black;
   overflow: hidden;
   height: auto;
-  max-height: 3000px;
+  max-height: 6000px;
   will-change: opacity, max-height;
   transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
@@ -199,6 +201,23 @@ h4 {
   font-weight: 600;
   font-size: 18px;
 }
+.textblock ul {
+  margin-top: 10px;
+  margin-left: 15px;
+  padding-left: 15px;
+  list-style-position: inside;
+}
+.textblock ul li {
+  padding-left: 15px;
+  margin: 5px;
+  min-height: 20px;
+  padding: 0px;
+  text-indent: -19px;
+  margin-left: 15px;
+}
+.textblock ul li span {
+  font-weight: 600;
+}
 
 .textdivider {
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -208,6 +227,15 @@ h4 {
   margin: auto;
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.textrow {
+  width: 100%;
+  height: auto;
+  min-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topblock {
@@ -294,4 +322,46 @@ h4 {
 
 .vidpan {
   height: 100% !important;
+  width: 400px !important;
+}
+
+.vidpan2 {
+  height: 100% !important;
+  width: 600px !important;
+}
+
+.rowimg {
+  height: auto;
+  width: calc(100% - 15px);
+}
+
+.rowframe {
+  width: 20vw;
+  height: 20vw;
+}
+.rowframe img {
+  transform: scale(1.1);
+}
+
+.rowframe2 {
+  width: 45%;
+  height: 100%;
+}
+.rowframe2 img {
+  transform: scale(1.1);
+}
+
+.moveup {
+  transform: translateY(-60px) scale(1.1) !important;
+}
+
+.smaller {
+  width: 30vw;
+  height: 30vw;
+  max-width: 400px;
+  max-height: 400px;
+}
+
+.imga {
+  transform: scale(1.8);
 }/*# sourceMappingURL=projectpage.css.map */

@@ -267,12 +267,17 @@
 }
 .projects__card__inner__img {
   background: var(--timberwolf);
-  height: 100%;
-  border-radius: 15px;
+  height: calc(100% - 16px);
+  overflow: hidden;
+  border-radius: 16px;
   box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
   position: relative;
+  align-items: center;
+  justify-content: center;
   z-index: 504;
   margin: 12px 12px;
+  display: block;
+  box-sizing: border-box;
 }
 .projects__card__inner__img__img1 {
   background-image: url(../assets/minesweeperg2.gif);
@@ -284,54 +289,114 @@
   overflow: hidden;
   transform: translate(-3px, -290px);
 }
-.projects__card__inner__img.img1 {
+.projects__card__inner__img .img1 {
   background-image: url(../assets/minesweeperg.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img2 {
+.projects__card__inner__img .img2 {
   background-image: url(../assets/sphereprojectgraphics.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img3 {
+.projects__card__inner__img .img3 {
   background-image: url(../assets/Everlasting.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img4 {
+.projects__card__inner__img .img4 {
   background-image: url(../assets/python.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img5 {
-  background-image: url(../assets/);
+.projects__card__inner__img .img5 {
+  background-image: url(../assets/monster.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img6 {
+.projects__card__inner__img .img6 {
   background-image: url(../assets/lammps.png);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
-.projects__card__inner__img.img7 {
+.projects__card__inner__img .img8 {
+  background-image: url(../assets/arduino.jpeg);
+  background-size: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.projects__card__inner__img .img9 {
+  background-image: url(../assets/penplotter.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.projects__card__inner__img .img7 {
   background-image: url(../assets/Portal2.gif);
   background-size: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: calc(100% - 24px);
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.projects__card__inner__img .video-wrapper {
+  /* Telling our absolute positioned video to 
+  be relative to this element */
+  position: initial;
+  /* Will not allow the video to overflow the 
+  container */
+  height: 100%;
+  width: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  overflow: hidden;
+  margin: 0 0;
+  padding: 0 0;
+  /* Centering the container's content vertically 
+  and horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects__card__inner__img video {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
 }
 .projects__card__inner__button {
   display: flex;
@@ -556,7 +621,16 @@
   margin: 0 0;
   border: 3px solid var(--whitesmoke);
   box-sizing: border-box;
+  display: block;
+  justify-content: center;
+  align-items: center;
   transition: border 0.2s ease, background 0.2s ease;
+}
+.clip i {
+  font-size: 30px;
+  padding: 0 0;
+  margin: 0 0;
+  transform: translateY(-62px) !important;
 }
 .clip.activated.slime2 {
   background: var(--slime);
@@ -625,7 +699,9 @@
 
 .image-frame {
   width: 100%;
-  height: 50%;
+  height: 50% !important;
+  max-height: 50%;
+  overflow: hidden;
 }
 
 .label {
