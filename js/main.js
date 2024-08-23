@@ -878,8 +878,8 @@ window.addEventListener('scroll', function() {
     });
     const computedStyle = window.getComputedStyle(expandButton);
     let widthX = computedStyle.getPropertyValue('width');
-    let widthX2 = - parseFloat(widthX) - (parseFloat(widthX) / 10);
-    //console.log("width: " + parseFloat(widthX2));
+    let widthX2 = - parseFloat(widthX) -110;
+    console.log("width: " + parseFloat(widthX2));
     let heightX = computedStyle.getPropertyValue('height');
     let heightX2 = parseFloat(heightX);
     offset = index2 * (heightX2) + 5;
