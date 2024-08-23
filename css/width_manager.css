@@ -4711,13 +4711,16 @@
   }
   .form-frame form .form-row button {
     transform: scale(1);
-    margin-top: 200px;
+    margin-top: 180px;
   }
   .contact {
     height: 100vh;
   }
   .background--two {
     height: 180vh;
+  }
+  .inversed-arrow {
+    transform: scale(1.01);
   }
 }
 @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 427px) {
@@ -6365,7 +6368,7 @@
     max-width: 75%;
   }
   .form-frame {
-    height: 500px;
+    height: 460px;
     font-size: 12px;
     width: 60%;
   }
@@ -6382,7 +6385,7 @@
   }
   .form-frame form .form-row .input_data textarea {
     font-size: 12px;
-    height: 200px;
+    height: 160px;
   }
   .form-frame form .form-row .input_data .underline {
     position: relative;
@@ -6402,7 +6405,7 @@
   }
   .form-frame form .form-row button {
     transform: scale(1);
-    margin-top: 200px;
+    margin-top: 130px;
   }
   .contact {
     height: 100vh;
@@ -6412,6 +6415,7 @@
   }
   .inversed-arrow {
     pointer-events: none;
+    transform: scale(1.01);
   }
 }
 @media screen and (orientation: portrait) and (min-width: 361px) and (max-width: 375px) {
