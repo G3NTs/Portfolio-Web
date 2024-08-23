@@ -27,26 +27,151 @@
     <div class="content">
         <h4>Procedural Planet Generation in Unreal</h4>
 
-        <!-- Update #06 -->
+        <!-- Update #01 -->
 
-        <div class="box">
+        <div class="box minature">
             <div class="boxwindowbar">
                 <ul class="window-buttons">
-                    <span>Procedural Planet #06 Fixing terrain edge normals</span>
+                    <span>Procedural Planet #01 My Old Approach</span>
                     <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
                     <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
-            <div class="textblock">introduction</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-08-08</div>
+            <div class="textblock">
+                When I started working on procedural planet generation in Unreal Engine, I aimed to create a planet made of hexagonal tiles. This was my first project in Unreal, and I used an icosahedron as the base shape. By subdividing the icosahedron, I transformed it into a sphere covered with hexagons. 
+                <br><br>
+                However, due to the geometry of the icosahedron, 12 pentagons appeared at the poles. This is a known issue when converting an icosahedron to a hexagon grid, but it didn’t affect the main goal of my project. Here’s a look at the planet I created:
+            </div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe3">
+                    <img class="rowimg" src="assets/Portfolio/hexagonplanet2.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe3">
+                    <img class="rowimg" src="assets/Portfolio/sphereproject.png" alt="">
+                </div>
+            </div>
+            <div class="textblock">
+                In addition to the planet's structure, I experimented with custom skybox projections and Unreal’s atmosphere component. These experiments produced a visually interesting planet, but several issues soon became apparent.
+            </div>
+            <div class="imagecontainer rowframe3">
+                <img class="rowimg" src="assets/Portfolio/sphereprojectgraphics.png" alt="">
+            </div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <h5>Performance Issues</h5>
+                The biggest problem I faced was related to performance. I made each hexagon tile its own actor and procedural mesh, thinking this would allow for easy swapping of tiles with pre-made ones. However, this decision led to a significant performance hit.
                 <br><br>
-                <a href="">link</a>
+                Each tile being its own actor meant that Unreal Engine had to handle each one individually during rendering. With thousands of tiles making up the planet, this resulted in a large number of draw calls, which severely impacted performance. The game struggled to run smoothly, making this approach impractical for large-scale planet generation.
+                <br><br>
+                Realizing this, I knew I needed to rethink my approach to achieve better performance and scalability.
             </div>
+        </div>
+
+        <!-- Update #02 -->
+
+        <div class="box minature">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #02 A New Approach: Refactoring the Code</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-29</div>
+            <div class="textblock">Hello everyone, <br> <br> and welcome to the second update on my game development journey using Unreal Engine and C++. This post marks a significant shift in my approach as I decided to refactor my old code entirely. The limitations I encountered with my initial hexagon tile-based approach, including problematic mesh data storage, poor UV mapping, and high draw calls leading to performance issues, prompted me to rethink my strategy. Although performance optimizations were possible, I opted to explore a new method, moving away from individual tile-based meshes.</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Moving to Large Squared Tiles</h5>
+                Instead of the previous tile-based approach, I decided to construct the planet using large squared tiles. This change simplifies future optimizations and Level of Detail (LOD) implementations. The concept of a cube sphere, where a sphere is represented with square tiles, served as a starting point. Additionally, I explored modifying an icosahedron by merging two triangles into a single quad. Implementing both solutions in parallel seemed prudent, allowing for comparative analysis. I began by creating flat projections of the terrain for both the cube sphere and modified icosahedron, which you can see below for comparison.
+            </div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe4">
+                    <img class="rowimg" src="assets/Portfolio/cubeFlat.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe4">
+                    <img class="rowimg" src="assets/Portfolio/icoFlat.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Transitioning to 3D</h5>
+                With the flat projections ready, the next step was positioning these tiles into their 3D configurations for both the cube sphere and icosahedron. Keeping the shapes flat initially, I adapted my interpolation code to accommodate the sharp edges in the icosahedron quads. The transition results are shown below, illustrating the shift from 2D projections to 3D tiles.
+            </div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe5">
+                    <img class="rowimg" src="assets/Portfolio/cube.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe5">
+                    <img class="rowimg" src="assets/Portfolio/ico.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Normalizing and Finalizing the Sphere</h5>
+                The final step involved normalizing the vertices to form a spherical shape. By multiplying the normalized vertices by the desired radius, I achieved a large procedural sphere. This method ensures a smooth and continuous surface, essential for realistic planet generation.
+            </div>
+            <div class="textrow">
+                <div class="imagecontainer rowframe3">
+                    <img class="rowimg" src="assets/Portfolio/cubeSphere.png" alt="">
+                </div>
+                <div class="imagecontainer rowframe3">
+                    <img class="rowimg" src="assets/Portfolio/icoSphere.png" alt="">
+                </div>
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Technical Details: UVs, Triangles, and Normals</h5>
+                Regarding UV mapping, triangle creation, and normal calculation, these steps were integrated into the terrain generation process. UVs and triangles were computed during the interpolation stage, ensuring accurate texture mapping. Normal vectors were calculated at the final stage, specifically for the 3D spherical shape. It's worth noting that this sequential approach resulted in some lighting artifacts during the intermediate stages, as the normals were only correct in the final 3D configuration.
+            </div>
+        </div>
+
+         <!-- Update #03 -->
+
+         <div class="box minature">
+            <div class="boxwindowbar">
+                <ul class="window-buttons">
+                    <span>Procedural Planet #03 Experimenting with Unreal Engine master materials</span>
+                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
+                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
+                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+            </div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-08-08</div>
+            <div class="textblock">With the initial sphere shape complete, the next step was to texture the planet. I wanted to find an efficient way to apply textures to the complex spherical surface, which led me to explore different techniques.</div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Tri-Planar Mapping</h5>
+                One method I discovered was tri-planar mapping, a technique that projects textures onto a 3D model from three orthogonal planes (usually X, Y, and Z axes). Instead of relying on traditional UV mapping, which can be complex for irregular shapes like a sphere, tri-planar mapping projects textures from each axis and blends them based on the surface's normal direction. This method is particularly useful for objects that lack a proper UV map or for models with difficult geometry. Here's a visual representation:
+            </div>
+            <div class="imagecontainer rowframe6">
+                <img class="rowimg" src="assets/triplanar.jpg" alt="">
+            </div>
+            <div class="textblock">
+                This technique allowed me to apply textures without worrying about UV mapping. Additionally, this method provided the flexibility to switch to square-based tiling if needed.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Problems with Tri-Planar Mapping</h5>
+                However, tri-planar mapping in Unreal Engine has a significant drawback. Due to how textures are sampled and remapped in 3D space, it requires multiple texture samplers. Unreal Engine limits texture samplers to 12 per material, which can be quickly exceeded when using tri-planar mapping.
+                <br><br>
+                Each texture in tri-planar mapping is sampled three times—once for each axis. This means that a single texture, when mapped using tri-planar techniques, uses four texture samplers: one for each axis and one for the original texture. This setup restricts us to using only three textures (base color, normal map, and either a specular or roughness map) within a single material before hitting the sampler limit.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>A Solution: Dithering</h5>    
+                The main reason for the high sampler count is the need to blend the textures smoothly across the different planes. A YouTuber named "<a href="https://www.youtube.com/watch?v=dFApswlwsRc&t=9s">Alex</a>" proposed an alternative solution using dithering instead of linear interpolation to transition between textures.
+                <br><br>
+                Dithering is a technique where small patterns of pixels are used to create the illusion of gradient transitions. In the context of tri-planar mapping, dithering can be used to mix the textures from different planes without requiring the additional texture samplers needed for smooth transitions. By implementing Alex's solution, I was able to achieve seamless transitions between textures with fewer texture samplers, allowing more textures to be used in a single material.
+                <br><br>
+                This approach provided a practical solution to the limitations of tri-planar mapping, helping me maintain visual quality while staying within Unreal Engine's material constraints.
+            </div>
+            <div class="imagecontainer rowframe2">
+                <img class="rowimg" src="assets/Portfolio/material.png" alt="">
+            </div>
+
         </div>
 
         <!-- Update #05 -->
@@ -54,125 +179,36 @@
         <div class="box">
             <div class="boxwindowbar">
                 <ul class="window-buttons">
-                    <span>Procedural Planet #05 3D Height maps & data assets</span>
+                    <span>Procedural Planet #04 3D Height maps & data assets</span>
                     <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
                     <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
                     <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
                 </ul>
             </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
-            <div class="textblock">introduction</div>
+            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-08-08</div>
+            <div class="textblock">To add height and more realistic terrain to my procedural planet, I needed a way to generate a consistent 3D height map across all axes. For this, I chose to use 3D simplex noise.</div>
             <div class="textdivider"></div>
             <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
+                <h5>3D Simplex Noise</h5>
+                Simplex noise is a more efficient and higher-dimensional alternative to the traditional Perlin noise algorithm. Unlike Perlin noise, which is typically 2D or 3D, simplex noise can operate in any number of dimensions. It’s open-source and well-suited for generating natural-looking terrain, especially when you need a noise function that works smoothly in 3D space.
                 <br><br>
-                <a href="">link</a>
+                The implementation of 3D simplex noise went smoothly and allowed me to create the height variations needed for the planet's surface. By feeding the noise values into the vertices of the planet mesh, I was able to create varying elevations that mimicked natural terrain features.
+            </div>
+            <div class="textdivider"></div>
+            <div class="textblock">
+                <h5>Handling Seams Between Terrain Tiles</h5>
+                However, this approach introduced a common issue: visible seams between adjacent terrain tiles. These seams occur because each tile calculates its vertex normals independently, leading to mismatches at the borders where tiles meet. Normals are crucial for lighting calculations, and when they don’t align correctly, the result is a noticeable seam.
+                <br><br>
+                To fix this, I needed to make each terrain tile aware of its neighboring tiles. By using vertex math and a neighbor index, I adjusted the normals at the edges of each tile so that they aligned correctly with adjacent tiles. This adjustment ensured that the lighting was smooth across tile borders, eliminating the seams and creating a seamless terrain surface. Here's the final result:
+            </div>
+            <div class="imagecontainer rowframe2">
+                <img class="rowimg" src="assets/Portfolio/heightmap.png" alt="">
+            </div>
+            <div class="textblock">
+                This approach not only improved the visual quality of the planet's terrain but also ensured that the height map remained consistent and smooth across the entire planet.
             </div>
         </div>
-
-        <!-- Update #04 -->
-
-        <div class="box">
-            <div class="boxwindowbar">
-                <ul class="window-buttons">
-                    <span>Procedural Planet #04 Experimenting with Unreal Engine master materials</span>
-                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
-                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
-                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
-                </ul>
-            </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
-            <div class="textblock">introduction</div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
-                <br><br>
-                <a href="">link</a>
-            </div>
-        </div>
-
-        <!-- Update #03 -->
-
-        <div class="box">
-            <div class="boxwindowbar">
-                <ul class="window-buttons">
-                    <span>Procedural Planet #03 A New Approach: Refactoring the Code</span>
-                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
-                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
-                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
-                </ul>
-            </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-29</div>
-            <div class="textblock">Hello everyone, <br> <br> and welcome to the third update on my game development journey using Unreal Engine and C++. This post marks a significant shift in my approach as I decided to refactor my old code entirely. The limitations I encountered with my initial hexagon tile-based approach, including problematic mesh data storage, poor UV mapping, and high draw calls leading to performance issues, prompted me to rethink my strategy. Although performance optimizations were possible, I opted to explore a new method, moving away from individual tile-based meshes.</div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>Moving to Large Squared Tiles</h5>
-                Instead of the previous tile-based approach, I decided to construct the planet using large squared tiles. This change simplifies future optimizations and Level of Detail (LOD) implementations. The concept of a cube sphere, where a sphere is represented with square tiles, served as a starting point. Additionally, I explored modifying an icosahedron by merging two triangles into a single quad. Implementing both solutions in parallel seemed prudent, allowing for comparative analysis. I began by creating flat projections of the terrain for both the cube sphere and modified icosahedron, which you can see below for comparison.
-            </div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>Transitioning to 3D</h5>
-                With the flat projections ready, the next step was positioning these tiles into their 3D configurations for both the cube sphere and icosahedron. Keeping the shapes flat initially, I adapted my interpolation code to accommodate the sharp edges in the icosahedron quads. The transition results are shown below, illustrating the shift from 2D projections to 3D tiles.
-            </div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>Normalizing and Finalizing the Sphere</h5>
-                The final step involved normalizing the vertices to form a spherical shape. By multiplying the normalized vertices by the desired radius, I achieved a large procedural sphere. This method ensures a smooth and continuous surface, essential for realistic planet generation.
-            </div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>Technical Details: UVs, Triangles, and Normals</h5>
-                Regarding UV mapping, triangle creation, and normal calculation, these steps were integrated into the terrain generation process. UVs and triangles were computed during the interpolation stage, ensuring accurate texture mapping. Normal vectors were calculated at the final stage, specifically for the 3D spherical shape. It's worth noting that this sequential approach resulted in some lighting artifacts during the intermediate stages, as the normals were only correct in the final 3D configuration.
-                <br><br>
-                Thank you for following along with this development update. The transition from hexagon tiles to a more efficient large squared tile approach opens up new possibilities for optimization and visual fidelity in my procedural planet generation. Stay tuned for more updates as I continue refining and enhancing this system!
-            </div>
-        </div>
-
-        <!-- Update #02 -->
-
-        <div class="box">
-            <div class="boxwindowbar">
-                <ul class="window-buttons">
-                    <span>Procedural Planet #02 Skybox projection</span>
-                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
-                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
-                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
-                </ul>
-            </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
-            <div class="textblock">introduction</div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
-                <br><br>
-                <a href="">link</a>
-            </div>
-        </div>
-
-        <!-- Update #01 -->
-
-        <div class="box">
-            <div class="boxwindowbar">
-                <ul class="window-buttons">
-                    <span>Procedural Planet #01 Are hexagon the bestagons?!?</span>
-                    <li class="window-button minus"><i class="fa-solid fa-minus"></i></li>
-                    <li class="window-button restore"><i class="fa-regular fa-window-restore"></i></li>
-                    <li class="window-button close"><i class="fa-solid fa-xmark"></i></li>
-                </ul>
-            </div>
-            <div class="topblock">Posted by <span>Dobbenberg</span>, <span>Wouter</span>  on 2024-05-28</div>
-            <div class="textblock">introduction</div>
-            <div class="textdivider"></div>
-            <div class="textblock">
-                <h5>title</h5>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, labore.
-                <br><br>
-                <a href="">link</a>
-            </div>
-        </div>
+        
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
