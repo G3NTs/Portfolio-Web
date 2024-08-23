@@ -2160,7 +2160,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 48vh;
+    height: 800px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -2735,7 +2735,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 60vh;
+    height: 800px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -3315,7 +3315,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 70vh;
+    height: 800px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -4441,6 +4441,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
+    height: 900px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -5000,6 +5001,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
+    height: 900px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -6127,7 +6129,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 105vh;
+    height: 900px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -6695,7 +6697,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 150vh;
+    height: 1000px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -7273,7 +7275,7 @@
   }
   .skills__graph {
     margin-bottom: 0px;
-    height: 120vh;
+    height: 900px;
   }
   .skills__bar__graphs__one__right .bar::before {
     width: 220px;
@@ -8685,7 +8687,7 @@
   .centered__triangle {
     height: 50px;
     width: 50px;
-    top: 76px;
+    top: px;
   }
   .background--two {
     height: 180vh;
