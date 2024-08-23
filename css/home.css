@@ -24,6 +24,7 @@
   height: 900px;
   position: absolute;
   top: -630px;
+  pointer-events: none;
   z-index: 980;
   filter: drop-shadow(0px -6px 7px rgba(0, 0, 0, 0.7));
 }

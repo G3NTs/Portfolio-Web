@@ -49,7 +49,7 @@
 }
 
 body {
-  height: 200vh;
+  height: auto;
   margin: 0;
   font-weight: 500;
   font-size: 14px;
@@ -351,6 +351,50 @@ h4 {
   transform: scale(1.1);
 }
 
+.rowframe3 {
+  width: 350px;
+  height: 300px;
+}
+.rowframe3 img {
+  transform: scale(1.1);
+}
+
+.rowframe4 {
+  width: 350px;
+  height: 150px;
+}
+.rowframe4 img {
+  transform: scale(1.1);
+}
+
+.rowframe5 {
+  width: 350px;
+  height: 275px;
+}
+.rowframe5 img {
+  transform: scale(1.1);
+}
+
+.rowframe6 {
+  width: 250px;
+  height: 110%;
+}
+.rowframe6 img {
+  transform: scale(1.13) translateY(5px);
+}
+
+.rowframe7 {
+  width: 100%;
+  height: 100%;
+  padding: 0 0;
+  margin: auto;
+}
+.rowframe7 img {
+  padding: 0 0;
+  margin: 0 0;
+  transform: scale(1.04) translateX(5px);
+}
+
 .moveup {
   transform: translateY(-60px) scale(1.1) !important;
 }
@@ -364,4 +408,32 @@ h4 {
 
 .imga {
   transform: scale(1.8);
+}
+
+.tiltshift1 {
+  background: url(../assets/arduino.jpg);
+  width: 250px !important;
+  height: 110% !important;
+  background-size: cover;
+}
+.tiltshift1 img {
+  width: 250px !important;
+  height: 110% !important;
+  -webkit-filter: blur(3px) grayscale(10%);
+  -webkit-mask-box-image: -webkit-linear-gradient(black 25%, transparent 35%, transparent 65%, black 75%);
+  transform: scale(1.01);
+}
+
+.tiltshift2 {
+  background: url(../assets/pump.jpg);
+  width: 250px !important;
+  height: 110% !important;
+  background-size: cover;
+}
+.tiltshift2 img {
+  width: 250px !important;
+  height: 110% !important;
+  -webkit-filter: blur(3px) grayscale(10%);
+  -webkit-mask-box-image: -webkit-linear-gradient(black 25%, transparent 35%, transparent 65%, black 75%);
+  transform: scale(1.01);
 }/*# sourceMappingURL=projectpage.css.map */
